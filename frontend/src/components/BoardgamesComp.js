@@ -17,7 +17,7 @@ import Home from '../components/pages/Home'
 
 
 //functions
-import { fetchBoardgames, createBoardgame } from "../utils/functions";
+import { fetchBoardgames } from "../utils/functions";
 
 
 function BoardgamesComp() {
@@ -46,7 +46,6 @@ function BoardgamesComp() {
     const updateCreateFormField = (e) => {
     // Will get name, value, type, and checked from inputs
     const { name, value, type, checked } = e.target;
-        console.log('Received:', { name, value, type, checked } )
     // Update state based on input type
     setCreateForm((prevCreateForm) => {
         if (type === 'checkbox' && name === 'genre') {
@@ -172,6 +171,9 @@ function BoardgamesComp() {
     e.preventDefault()
     const {title, body, numberOfPlayers, playingTime, complexity, genre, myNote, myRating} = updateForm
     //update request
+
+    console.log('Before Update:', updateForm);
+
     try {
         // Update request
         const res = await axios.put(`http://localhost:3006/boardgames/${updateForm._id}`, { title, body, numberOfPlayers, playingTime, complexity, genre, myNote, myRating });
@@ -183,6 +185,9 @@ function BoardgamesComp() {
         );
         // Reset the update form
         setUpdateForm({ _id: null, title: "", body: "", numberOfPlayers: "", playingTime: "", complexity: null, genre: [], myNote:"" });
+
+        console.log('Update Response:', res.data);
+        window.location.href = "/boardgames";
 
         
     } catch (error) {

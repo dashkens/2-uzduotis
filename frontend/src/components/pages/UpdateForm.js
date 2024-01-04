@@ -28,9 +28,9 @@ export default function UpdateForm({handleUpdate, updateForm, handleUpdateFieldC
             type="text"
             name="numberOfPlayers"
             />
-        <label htmlFor="time">Playing time: </label>
+        <label htmlFor="playingTime">Playing time: </label>
             <input type="text"
-            name="time"
+            name="playingTime"
             value={updateForm.playingTime}
             onChange={handleUpdateFieldChange}
             />    
@@ -68,9 +68,7 @@ export default function UpdateForm({handleUpdate, updateForm, handleUpdateFieldC
             name ="myNote"
             rows="6" cols="60">
         </textarea>
-        <Link to={`/boardgames`}>
         <button type="submit">Update boardgame</button>
-        </Link>
         <Link to={`/boardgames`}>
         <button>Back to board games</button>
         </Link>

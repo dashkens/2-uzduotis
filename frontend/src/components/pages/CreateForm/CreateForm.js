@@ -8,7 +8,6 @@ export default function CreateForm({createBoardgame, updateCreateFormField, crea
             <form onSubmit={createBoardgame}>
             <label htmlFor="title">Title: </label>
         <input 
-            id = 'title'
             onChange={updateCreateFormField}
             value={createForm.title}
             name="title"
@@ -16,7 +15,6 @@ export default function CreateForm({createBoardgame, updateCreateFormField, crea
             />
         <label htmlFor="body">Description:</label>
         <textarea 
-            id='body'
             onChange={updateCreateFormField}
             value = {createForm.body} 
             name ="body"
@@ -24,7 +22,6 @@ export default function CreateForm({createBoardgame, updateCreateFormField, crea
         </textarea>
         <label htmlFor="numberOfPlayers">Number of players: </label>
             <input 
-            id='numberOfPlayers'
             onChange={updateCreateFormField}
             value={createForm.numberOfPlayers}
             type="text"
@@ -33,7 +30,6 @@ export default function CreateForm({createBoardgame, updateCreateFormField, crea
         <label htmlFor="playingTime">Playing time: </label>
             <input type="text"
             name="playingTime"
-            id="playingTime"
             value={createForm.playingTime}
             onChange={updateCreateFormField}
             />    
@@ -48,7 +44,6 @@ export default function CreateForm({createBoardgame, updateCreateFormField, crea
                 <input
                 type="checkbox"
                 name="genre"
-                id="genre"
                 value={genre}
                 //return true or false
                 //updateForm.genre - has the current state of updateForm values

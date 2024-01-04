@@ -19,20 +19,6 @@ export const bg_get_one = async(req,res) =>{
 export const bg_post = async(req, res) => {
     //get the sent data off request body
     const {title, body, numberOfPlayers, complexity, playingTime, myRating, myNote, genre} = req.body
-    let emptyFields = []
-
-    if(!title){emptyFields.push('title')}
-    // if(!body){emptyFields.push('body')}
-    // if(!complexity){emptyFields.push('complexity')}
-    // if(!title){emptyFields.push('title')}
-    // if(!title){emptyFields.push('title')}
-    // if(!title){emptyFields.push('title')}
-    // if(!title){emptyFields.push('title')}
-    // if(!title){emptyFields.push('title')}
-
-    if(emptyFields.length > 0) {
-        return res.status(400).json({error: 'All fields are required', emptyFields})
-    }
 
     try {
          //create a game with it
